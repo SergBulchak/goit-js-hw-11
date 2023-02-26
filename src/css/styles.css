@@ -1,0 +1,84 @@
+/* Загальні класи */
+.hidden {
+    display:none;
+}
+
+
+
+
+/* стилізація кнопки */
+button {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 15px 30px 15px;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+button span {
+    position: relative;
+    color: #fff;
+}
+button span:hover{
+    color: #333;
+}
+
+button .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(45deg, #4f00bc, #29abe2);
+    transition: .5s ease;
+}
+
+button:hover .wave::after,
+button:hover .wave::before {
+    width: 0;
+    height: 0;
+    transition: 2s ease;
+}
+
+button .wave::after,
+button .wave::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    transition: .5s ease;
+}
+
+button .wave::before {
+    border-radius: 40%;
+    background: rgba(1, 1, 1, .5);
+    animation: wave 7s linear infinite;
+}
+
+button .wave::after {
+    border-radius: 45%;
+    background: #333;
+    animation: wave 12s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
